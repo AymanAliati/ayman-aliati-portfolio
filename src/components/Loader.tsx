@@ -15,9 +15,6 @@ const Loader = ({ onComplete }: LoaderProps) => {
     "[sudo] password for ayman: ************",
     "",
     "> Initialisation des modules...",
-  
-    
-    "> Connexion établie [SECURE]",
     "",
     "████████████████████████ 100%",
     
