@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+    --primary: 220 90% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 90% 20%;
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 160 75% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 220 90% 56%;
+    --radius: 0.75rem;
+    
+    /* Premium design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(220 90% 56%), hsl(160 75% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 15% 98%));
+    --shadow-elegant: 0 10px 40px -15px hsl(220 90% 56% / 0.25);
+    --shadow-glow: 0 0 60px hsl(220 90% 56% / 0.15);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Matrix/Terminal colors */
+    --terminal-green: 142 71% 45%;
+    --terminal-glow: 142 71% 45% / 0.2;
+    --glass-bg: 0 0% 100% / 0.6;
+    --glass-border: 220 15% 88% / 0.3;
+    
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  
+  .dark {
+    --background: 200 20% 5%;
+    --foreground: 180 100% 95%;
+    --card: 200 25% 8%;
+    --card-foreground: 180 100% 95%;
+    --popover: 200 25% 8%;
+    --popover-foreground: 180 100% 95%;
+    /* Use vivid green for primary/accent */
+    --primary: 142 100% 50%;
+    --primary-foreground: 200 20% 5%;
+    --secondary: 200 20% 12%;
+    --secondary-foreground: 142 100% 80%;
+    --muted: 200 20% 10%;
+    --muted-foreground: 180 20% 60%;
+    --accent: 142 100% 50%;
+    --accent-foreground: 200 20% 5%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 142 60% 20%;
+    --input: 142 40% 15%;
+    --ring: 142 100% 50%;
+    
+    /* Premium design tokens - dark mode (green) */
+    --gradient-primary: linear-gradient(135deg, hsl(142 100% 50%), hsl(160 100% 40%));
+    --gradient-glow: radial-gradient(circle at center, hsl(142 100% 50% / 0.4), transparent 70%);
+    --gradient-subtle: linear-gradient(180deg, hsl(200 20% 5%), hsl(200 25% 8%));
+    --shadow-elegant: 0 10px 40px -15px hsl(142 100% 50% / 0.5);
+    --shadow-glow: 0 0 80px hsl(142 100% 50% / 0.4);
+    --shadow-hero-glow: 0 0 120px 40px hsl(142 100% 50% / 0.6);
+    
+    /* Matrix/Terminal colors - dark mode */
+    --terminal-green: 142 100% 60%;
+    --terminal-glow: 142 100% 60% / 0.4;
+    --glass-bg: 200 25% 8% / 0.7;
+    --glass-border: 142 60% 30% / 0.4;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 142 100% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 142 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+  
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shadow-premium {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-hero-glow {
+    filter: drop-shadow(var(--shadow-hero-glow));
+  }
+  
+  .terminal-text {
+    font-family: 'Courier New', monospace;
+    color: hsl(var(--terminal-green));
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--terminal-green) / 0.8),
+                 0 0 40px hsl(var(--terminal-green) / 0.6),
+                 0 0 60px hsl(var(--terminal-green) / 0.4);
+  }
+}
