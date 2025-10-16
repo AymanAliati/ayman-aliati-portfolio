@@ -10,8 +10,8 @@ const projects = [
     period: "Juin 2025 – Novembre 2025",
     description: "Site portfolio moderne avec animations Matrix et effets premium, construit avec les dernières technologies web.",
     tech: ["React.js", "Tailwind CSS", "Framer Motion"],
-    github: "#",
-    demo: "#",
+    github: "https://github.com/AymanAliati/ayman-aliati-portfolio",
+    demo: "https://ayman-aliati-portfolio.vercel.app/",
   },
   {
     title: "SecureXplorer (Projet Binôme avec Houssam EL bouamraoui)",
