@@ -38,6 +38,10 @@ const skillCategories = [
     category: "Web",
     skills: ["React.js", "Tailwind CSS", "Backend sécurisé PHP/MySQL"],
   },
+  {
+    category: "Productivité",
+    skills: ["Ctrl+C / Ctrl+V (100%)"],
+  },
 ];
 
 const Skills = () => {

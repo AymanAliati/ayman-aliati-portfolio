@@ -35,7 +35,7 @@ const projects = [
     description: "Application de prise de notes intelligente avec fonctionnalités de recherche avancée et organisation automatique.",
     tech: ["PHP", "MySQL", "HTML", "CSS", "JS"],
     github: "https://github.com/AymanAliati/PROJECT-S1-GESTION_TRANSPORT",
-    demo: "https://aymanschool.atwebpages.com/",
+    demo: "#",
   },
   {
     title: "Gestion du Transport Scolaire",
@@ -43,7 +43,7 @@ const projects = [
     description: "Système de gestion pour le transport scolaire avec suivi en temps réel et interface d'administration.",
     tech: ["HTML", "CSS", "JavaScript"],
     github: "#",
-    demo: "#",
+    demo: "https://aymanschool.atwebpages.com/",
   },
   {
     title: "ProMailer | Script d'Envoi d'Email Professionnel",

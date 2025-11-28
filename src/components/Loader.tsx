@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 interface LoaderProps {
   onComplete: () => void;
@@ -8,17 +8,18 @@ const Loader = ({ onComplete }: LoaderProps) => {
   const [lines, setLines] = useState<string[]>([]);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
-  const [showComplete, setShowComplete] = useState(false);
 
-  const terminalLines = [
-    "ayman@portfolio:~$ sudo systemctl start cybersecurity.service",
-    "[sudo] password for ayman: ************",
-    "",
-    "> Initialisation des modules...",
-    "",
-    "████████████████████████ 100%",
-    
-  ];
+  const terminalLines = useMemo(
+    () => [
+      "ayman@portfolio:~$ sudo systemctl start cybersecurity.service",
+      "[sudo] password for ayman: ************",
+      "",
+      "> Initialisation des modules...",
+      "",
+      "████████████████████████ 100%",
+    ],
+    []
+  );
 
   useEffect(() => {
     const typewriterInterval = setInterval(() => {
@@ -48,7 +49,7 @@ const Loader = ({ onComplete }: LoaderProps) => {
           onComplete(); // Transition directe vers le portfolio
         }, 500);
       }
-    }, 50); // Vitesse de frappe : 50ms par caractère
+    }, 22); 
 
     return () => clearInterval(typewriterInterval);
   }, [currentLineIndex, currentCharIndex, terminalLines, onComplete]);

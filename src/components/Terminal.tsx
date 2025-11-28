@@ -65,8 +65,8 @@ const Terminal = ({ onClose }: { onClose: () => void }) => {
       newHistory.push(
         "Contact:",
         "Email: aliatiaymane@gmail.com",
-        "GitHub: github.com/yourusername",
-        "LinkedIn: linkedin.com/in/yourusername"
+        "GitHub: github.com/AymanAliati",
+        "LinkedIn: linkedin.com/in/ayman-aliati"
       );
     } else if (cmd === "clear") {
       setHistory([]);
