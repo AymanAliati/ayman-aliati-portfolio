@@ -1,6 +1,6 @@
 import { Github, Download, Terminal, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/ayman-hero.png";
+import heroImage from "@/assets/imageprofile.jpg";
 import cvPdf from "@/assets/pdf/CV_Ayman_Aliati .pdf";
 
 const Hero = () => {
