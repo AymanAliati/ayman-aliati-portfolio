@@ -1,49 +1,57 @@
-import { Github, Download, Terminal, Linkedin } from "lucide-react";
+import { Github, Download, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/imageprofile.png";
 import cvPdf from "@/assets/pdf/CV_Ayman_Aliati .pdf";
 
 const Hero = () => {
+  const skills = ["Python", "Linux", "React", "Cybersecurity", "Networking"];
+
   return (
-    <section id="about" className="relative min-h-screen flex items-center justify-center pt-20 pb-16">
-      <div className="container mx-auto px-4">
+    <section id="about" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16">
+      <div className="pointer-events-none absolute left-[-10%] top-16 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 right-[-10%] h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
+
+      <div className="container relative z-10 mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
           {/* Image */}
           <div className="relative group animate-fade-in">
             <div className="absolute inset-0 bg-primary/40 rounded-3xl blur-[100px] opacity-60 group-hover:opacity-80 transition-opacity" 
                  style={{ filter: 'blur(100px)' }} />
-            <div className="relative">
+            <div className="relative rounded-[2rem] border border-primary/30 bg-background/40 p-2 backdrop-blur-sm">
               <img
                 src={heroImage}
                 alt="Ayman Aliati - Étudiant en Cybersécurité"
-                className="w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-3xl relative z-10"
+                className="relative z-10 h-72 w-72 rounded-3xl object-cover lg:h-96 lg:w-96"
                 style={{ filter: 'drop-shadow(0 0 60px rgba(0, 255, 200, 0.5))' }}
               />
             </div>
-            <div className="absolute -top-8 -left-8 bg-primary text-background px-4 py-2 rounded-full text-sm font-medium shadow-premium animate-fade-in z-20">
+            <div className="absolute -top-8 -left-8 z-20 rounded-full bg-primary px-4 py-2 text-sm font-medium text-background shadow-premium animate-fade-in">
               Cybersecurity Student
             </div>
           </div>
 
           {/* Content */}
-          <div className="max-w-2xl text-center lg:text-left animate-slide-up space-y-6">
-            <div className="space-y-2">
-              <div className="terminal-text text-sm font-mono mb-2">
+          <div className="max-w-2xl space-y-6 text-center animate-slide-up lg:text-left">
+            <div className="space-y-3">
+              <div className="terminal-text mb-2 text-sm font-mono">
                 &gt; Étudiant IT & Cybersécurité
               </div>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4">
-            Ayman <span className="text-gradient">Aliati</span>
-            </h1>
+              <h1 className="mb-4 text-4xl font-bold leading-tight lg:text-6xl">
+                Ayman <span className="text-gradient">Aliati</span>
+              </h1>
+              <p className="mx-auto max-w-xl text-base text-foreground/70 lg:mx-0">
+                Future cybersecurity engineer focused on building resilient systems and secure digital experiences.
+              </p>
             </div>
 
-            <p className="text-lg text-foreground/80 max-w-xl">
+            <p className="max-w-xl text-lg text-foreground/80">
               Passionné par la <span className="text-primary font-semibold">cybersécurité</span> et les <span className="text-primary font-semibold">réseaux</span>. En quête d'excellence technique et d'innovation dans le domaine de la sécurité informatique.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-background font-semibold transition-all shadow-premium hover:shadow-glow"
+                className="bg-primary text-background font-semibold transition-all hover:-translate-y-0.5 hover:bg-primary/90 shadow-premium hover:shadow-glow"
                 asChild
               >
                 <a
@@ -59,7 +67,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary/10"
+                className="border-2 border-primary/80 text-primary hover:bg-primary/10 hover:-translate-y-0.5 transition-all"
                 asChild
               >
                 <a
@@ -74,7 +82,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary/10"
+                className="border-2 border-primary/80 text-primary hover:bg-primary/10 hover:-translate-y-0.5 transition-all"
                 asChild
               >
                 <a
@@ -88,22 +96,15 @@ const Hero = () => {
               </Button>
             </div>
 
-            <div className="pt-4 flex flex-wrap gap-3 justify-center lg:justify-start">
-              <span className="px-4 py-1.5 rounded-full text-sm font-medium bg-background/50 text-foreground border border-primary/40">
-                Python
-              </span>
-              <span className="px-4 py-1.5 rounded-full text-sm font-medium bg-background/50 text-foreground border border-primary/40">
-                Linux
-              </span>
-              <span className="px-4 py-1.5 rounded-full text-sm font-medium bg-background/50 text-foreground border border-primary/40">
-                React
-              </span>
-              <span className="px-4 py-1.5 rounded-full text-sm font-medium bg-background/50 text-foreground border border-primary/40">
-                Cybersecurity
-              </span>
-              <span className="px-4 py-1.5 rounded-full text-sm font-medium bg-background/50 text-foreground border border-primary/40">
-                Networking
-              </span>
+            <div className="flex flex-wrap justify-center gap-3 pt-4 lg:justify-start">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-primary/40 bg-background/50 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-primary/10"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         </div>
